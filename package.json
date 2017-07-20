@@ -1,0 +1,16 @@
+{
+  "name": "bassdrive-archive-spider",
+  "version": "0.0.2",
+  "description": "Provides an easy way to spider the bassdrive archives",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Colin Kennedy <moshen.colin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "libxmljs": "^0.18.7",
+    "moment": "^2.18.1",
+    "request": "^2.81.0"
+  }
+}
