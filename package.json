@@ -1,9 +1,12 @@
 {
   "name": "bassdrive-archive-spider",
-  "version": "0.0.4",
+  "version": "0.0.0-dev",
   "description": "Provides an easy way to spider the bassdrive archives",
-  "main": "index.js",
+  "repository": "moshen/node-bassdrive-archive-spider",
+  "main": "dist/index.js",
   "scripts": {
+    "fmt": "prettier --ignore-path .gitignore -w *.ts *.json *.md",
+    "prepack": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Colin Kennedy <moshen.colin@gmail.com>",
@@ -12,5 +15,12 @@
     "libxmljs": "^0.19.7",
     "moment": "^2.27.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/libxmljs": "^0.18.7",
+    "@types/node": "^16.6.2",
+    "@types/request": "^2.48.7",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   }
 }

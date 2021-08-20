@@ -9,19 +9,21 @@ npm i bassdrive-archive-spider
 ## Usage
 
 ```javascript
-const bassdriveSpider = require('bassdrive-archive-spider')({
+const bassdriveSpider = require("bassdrive-archive-spider")({
   // Default options
-  onError: undefined
+  onError: undefined,
 });
 
 // Get all the archives!
 bassdriveSpider().then(([siteMap, allMp3s]) => {
-  console.log(siteMap['/1%20-%20Monday/']['Monday%20Night%20Live%20-%20BMK/']);
+  console.log(
+    siteMap.paths["/1%20-%20Monday/"].paths["Monday%20Night%20Live%20-%20BMK/"]
+  );
   console.log(allMp3s.slice(0, 20));
 });
 ```
 
-The `Mp3` objects in `siteMap` and `allMp3s` are defined in [Mp3.js](Mp3.js)
+The `Mp3` objects in `siteMap` and `allMp3s` are defined in [Mp3.ts](Mp3.ts)
 and look like:
 
 ```javascript
@@ -35,7 +37,7 @@ and look like:
 ```
 
 All the fields are scraped from the `url` with simple Regexps and may not be
-accurate.  Only the `url` and `filename` properties are guaranteed, but the
+accurate. Only the `url` and `filename` properties are guaranteed, but the
 naming conventions are simple enough that most files will have all properties
 populated.
 
@@ -47,10 +49,10 @@ Type: `Function|Falsey`
 
 Default: `undefined`
 
-`onError` is an error handler used during the spidering process.  If a page
-fails to load, or if links are incorrectly parsed, this will fire.  To ignore
-the error, simply return an empty array.  To elevate the error, return a
-rejected promise.  By default errors are ignored.
+`onError` is an error handler used during the spidering process. If a page
+fails to load, or if links are incorrectly parsed, this will fire. To ignore
+the error, simply return an empty array. To elevate the error, return a
+rejected promise. By default errors are ignored.
 
 ```javascript
 // Log errors to console and continue
